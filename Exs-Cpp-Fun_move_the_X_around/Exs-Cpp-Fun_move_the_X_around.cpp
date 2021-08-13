@@ -4,8 +4,8 @@
 
 void GetPosition();
 void DispMatrix();
-void UpdatePosition();
-void ChechForCollision();
+int UpdatePosition(char input);
+int CheckForCollision();
 
 char matrix[3][3];
 
@@ -22,13 +22,13 @@ int main()
 	matrix[1][1] = 'X';
 	matrix[0][0] = 'O';
 
-	char ch;
+	char ch = ' ';
 	do
 	{
 		DispMatrix();
 		GetPosition();
 		CheckForCollision();
-		UpdatePosition();
+		UpdatePosition(ch);
 		std::cout << "\nUse W S A D to move the X around and jet the O.\nSpace to end game.\nGet the Z first and become @ ;D";
 		ch = getchar();
 		if (ch != 'w' || 's' || 'a' || 'd') std::cout << "Use only FPS controls! WSAD >:D";
@@ -70,12 +70,21 @@ void DispMatrix()
 
 };
 
-void UpdatePosition()
+int UpdatePosition(char input)
 {
+	if (input != ' ')
+	{
 
+	}
+	else return input;
 };
 
-void CheckForCollision()
+int CheckForCollision()
 {
+	if (matrix[0][0] == 'X' || '@')
+	{
+		std::cout << "Got it!"; return 0;
+	}
+		
 
 };
