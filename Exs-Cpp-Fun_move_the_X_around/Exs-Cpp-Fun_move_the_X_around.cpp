@@ -30,13 +30,14 @@ int main()
 	matrix[4][4] = 'Z';
 
 	char ch = ' ';
+	std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
 	do
 	{
 		DispMatrix();
 		GetPosition();
 		CheckForCollision();
 		UpdatePosition(ch);
-		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
+		
 		
 		ch = getchar();
 
