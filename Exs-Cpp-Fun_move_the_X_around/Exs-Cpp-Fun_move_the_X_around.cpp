@@ -36,13 +36,16 @@ int main()
 		GetPosition();
 		CheckForCollision();
 		UpdatePosition(ch);
-		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D";
+		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
+		
 		ch = getchar();
-		if (ch != 'w' || 's' || 'a' || 'd') std::cout << "Use only FPS controls! WSAD >:D";
+
+		if (ch != 'w' || 's' || 'a' || 'd' ||' ') std::cout << "Use only FPS controls! WSAD >:D";
 		else UpdatePosition(ch);
 
 	} while (ch != ' '); //This is how you play FPSes >;D
-	std::cout << "YOU PUSHED THE SPACE! .............";
+
+	std::cout << "YOU PUSHED THE SPACE! .............\n\n";
 };
 
 void GetPosition()
@@ -80,6 +83,7 @@ void GetPosition()
 
 void DispMatrix()
 {
+	printf("\n");
 	for (int i = 0; i < 11; i++)
 	{
 		for (int j = 0; j < 11; j++)
