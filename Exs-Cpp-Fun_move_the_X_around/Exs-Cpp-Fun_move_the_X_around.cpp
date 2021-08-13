@@ -1,10 +1,10 @@
-
+// Of coure a player would be object with position as property, but this is another story ;D
 
 #include <iostream>
 
 void GetPosition();
 void DispMatrix();
-void UpdatePosition(char input);
+int UpdatePosition(char input);
 void CheckForCollision();
 struct MyStructure
 {
@@ -36,7 +36,7 @@ int main()
 		GetPosition();
 		CheckForCollision();
 		UpdatePosition(ch);
-		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ ;D";
+		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D";
 		ch = getchar();
 		if (ch != 'w' || 's' || 'a' || 'd') std::cout << "Use only FPS controls! WSAD >:D";
 		else UpdatePosition(ch);
@@ -97,25 +97,27 @@ void DispMatrix()
 
 };
 
-void UpdatePosition(char input)
+int UpdatePosition(char input)
 {
-	/*
+	
 	if (input != ' ')
 	{
-
+		int x, y;
+		x = CurrentPosition.x;
+		y = CurrentPosition.y;
+		matrix[x][y] == player;
 	}
 	else return input;
-	*/
+	
 };
 
 void CheckForCollision()
 {
-	/*
-	if (matrix[0][0] == CurrentPosition || matrix[ '@') //position
+	if (matrix[0][0] != 'O')
+		std::cout << "You've got the X\n";
+	if (matrix[4][4] != 'Z')
 	{
-		std::cout << "Got it!"; return 0;
-		player = '@';
-	}
-		
-*/
+		player= '@';
+
+	};
 };
