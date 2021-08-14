@@ -40,7 +40,7 @@ int main()
 		if (ch != 'w' && ch != 's' && ch != 'a' && ch != 'd' && ch != 'E' && ch != 'e') { std::cout << "Use only FPS controls! WSAD >:D\n"; system("pause"); };
 		if (ch == 'e') { std::cout << "Upper E!\n"; system("pause"); };
 	} while (ch != 'E'); //This is how you play FPSes >;D
-	std::cout << "YOU PUSHED THE DooM ! :D .............\n\n";
+	std::cout << "YOU PUSHED THE DooM ! :D .............\n\n---------------- EAGames ----------------|\n---------- Ment to be played! -----------|\n\n";
 	return 0;
 };
 
