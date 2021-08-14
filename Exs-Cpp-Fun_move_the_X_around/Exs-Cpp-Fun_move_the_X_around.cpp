@@ -31,25 +31,22 @@ int main()
 	do
 	{
 		system("cls");
-		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
+		std::cout << "\nUse W S A D to move the X around and get the O.\nPress E to end game.\nGet the Z first and become @ for points ;D\n\n";
 		DispMatrix();
 		GetPosition();
 		CheckForCollision();
 		std::cin >> ch;
 		UpdatePosition(ch);
-
-
-		/*
-		if (ch != 'w' || 's' || 'a' || 'd' ||' ') std::cout << "Use only FPS controls! WSAD >:D";
-		else UpdatePosition(ch);
-		*/
-	} while (ch != ' '); //This is how you play FPSes >;D
-	std::cout << "YOU PUSHED THE SPACE! .............\n\n";
+		if (ch != 'w' && ch != 's' && ch != 'a' && ch != 'd' && ch != 'E' && ch != 'e') { std::cout << "Use only FPS controls! WSAD >:D\n"; system("pause"); };
+		if (ch == 'e') { std::cout << "Upper E!\n"; system("pause"); };
+	} while (ch != 'E'); //This is how you play FPSes >;D
+	std::cout << "YOU PUSHED THE DooM ! :D .............\n\n";
+	return 0;
 };
 
 void GetPosition()
 {
-	if (player == 'X');
+	if (player == 'X')
 	{
 		for (int i = 0; i < 11; i++)
 		{
