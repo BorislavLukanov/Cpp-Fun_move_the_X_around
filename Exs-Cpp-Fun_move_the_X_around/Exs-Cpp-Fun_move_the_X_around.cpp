@@ -1,10 +1,10 @@
-// Of coure a player would be object with position as property, but this is another story ;D
+// Of course a player would be object with position as property, but this is another story ;D
 
 #include <iostream>
 
 void GetPosition();
 void DispMatrix();
-int UpdatePosition(char input);
+void UpdatePosition(char input);
 void CheckForCollision();
 struct MyStructure
 {
@@ -23,24 +23,19 @@ int main()
 		{
 			matrix[i][j] = ' ';
 		}
-
 	}
 	matrix[8][8] = 'X';
 	matrix[0][0] = 'O';
 	matrix[4][4] = 'Z';
-
 	char ch = ' ';
-	
 	do
 	{
-		//system("cls");
+		system("cls");
 		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
 		DispMatrix();
 		GetPosition();
 		CheckForCollision();
-		UpdatePosition(ch);
 		std::cin >> ch;
-		//ch = getchar();
 		UpdatePosition(ch);
 
 
@@ -49,7 +44,6 @@ int main()
 		else UpdatePosition(ch);
 		*/
 	} while (ch != ' '); //This is how you play FPSes >;D
-
 	std::cout << "YOU PUSHED THE SPACE! .............\n\n";
 };
 
@@ -83,7 +77,6 @@ void GetPosition()
 			}
 		}
 	}
-	
 };
 
 void DispMatrix()
@@ -101,50 +94,39 @@ void DispMatrix()
 			std::cout << "---|";
 		}
 		std::cout << "\n";
-
 	}
-	
 };
 
-int UpdatePosition(char input)
+void UpdatePosition(char input)
 {
-	
 	
 	if (input != ' ')
 	{
 		int x, y;
 		x = CurrentPosition.x;
 		y = CurrentPosition.y;
-		std::cout << matrix[x-1][y];
 		
-
 		if (input == 'w')
 		{
 			matrix[x - 1][y] = player;
 			matrix[x][y] = ' ';
-			std::cout << "W-ch";
 		};
 		if (input == 's')
 		{
 			matrix[x + 1][y] = player;
 			matrix[x][y] = ' ';
-			std::cout << "S-ch";
 		};
 		if (input == 'a')
 		{
 			matrix[x][y - 1] = player;
 			matrix[x][y] = ' ';
-			std::cout << "A-ch";
 		};
 		if (input == 'd')
 		{
 			matrix[x][y + 1] = player;
 			matrix[x][y] = ' ';
-			std::cout << "D-ch";
 		};
-	}
-	else return input;
-	
+	}	
 };
 
 void CheckForCollision()
