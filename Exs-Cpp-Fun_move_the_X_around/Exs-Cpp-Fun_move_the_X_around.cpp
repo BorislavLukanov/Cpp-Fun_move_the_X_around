@@ -30,20 +30,24 @@ int main()
 	matrix[4][4] = 'Z';
 
 	char ch = ' ';
-	std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
+	
 	do
 	{
+		//system("cls");
+		std::cout << "\nUse W S A D to move the X around and get the O.\nSpace to end game.\nGet the Z first and become @ for points ;D\n\n";
 		DispMatrix();
 		GetPosition();
 		CheckForCollision();
 		UpdatePosition(ch);
-		
-		
-		ch = getchar();
+		std::cin >> ch;
+		//ch = getchar();
+		UpdatePosition(ch);
 
+
+		/*
 		if (ch != 'w' || 's' || 'a' || 'd' ||' ') std::cout << "Use only FPS controls! WSAD >:D";
 		else UpdatePosition(ch);
-
+		*/
 	} while (ch != ' '); //This is how you play FPSes >;D
 
 	std::cout << "YOU PUSHED THE SPACE! .............\n\n";
@@ -99,18 +103,45 @@ void DispMatrix()
 		std::cout << "\n";
 
 	}
-
+	
 };
 
 int UpdatePosition(char input)
 {
+	
 	
 	if (input != ' ')
 	{
 		int x, y;
 		x = CurrentPosition.x;
 		y = CurrentPosition.y;
-		matrix[x][y] == player;
+		std::cout << matrix[x-1][y];
+		
+
+		if (input == 'w')
+		{
+			matrix[x - 1][y] = 'X';
+			matrix[x][y] = ' ';
+			std::cout << "W-ch";
+		};
+		if (input == 's')
+		{
+			matrix[x + 1][y] = 'X';
+			matrix[x][y] = ' ';
+			std::cout << "S-ch";
+		};
+		if (input == 'a')
+		{
+			matrix[x][y - 1] = 'X';
+			matrix[x][y] = ' ';
+			std::cout << "A-ch";
+		};
+		if (input == 'd')
+		{
+			matrix[x][y + 1] = 'X';
+			matrix[x][y] = ' ';
+			std::cout << "D-ch";
+		};
 	}
 	else return input;
 	
@@ -119,10 +150,10 @@ int UpdatePosition(char input)
 void CheckForCollision()
 {
 	if (matrix[0][0] != 'O')
-		std::cout << "You've got the X\n";
+		std::cout << "You've got the X.\n";
 	if (matrix[4][4] != 'Z')
 	{
 		player= '@';
-
+		std::cout << "You've got the 10 poins.\n";
 	};
 };
