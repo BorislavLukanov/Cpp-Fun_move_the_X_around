@@ -120,25 +120,25 @@ int UpdatePosition(char input)
 
 		if (input == 'w')
 		{
-			matrix[x - 1][y] = 'X';
+			matrix[x - 1][y] = player;
 			matrix[x][y] = ' ';
 			std::cout << "W-ch";
 		};
 		if (input == 's')
 		{
-			matrix[x + 1][y] = 'X';
+			matrix[x + 1][y] = player;
 			matrix[x][y] = ' ';
 			std::cout << "S-ch";
 		};
 		if (input == 'a')
 		{
-			matrix[x][y - 1] = 'X';
+			matrix[x][y - 1] = player;
 			matrix[x][y] = ' ';
 			std::cout << "A-ch";
 		};
 		if (input == 'd')
 		{
-			matrix[x][y + 1] = 'X';
+			matrix[x][y + 1] = player;
 			matrix[x][y] = ' ';
 			std::cout << "D-ch";
 		};
